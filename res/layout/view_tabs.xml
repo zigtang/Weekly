@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+    <Button 
+        android:id="@+id/btn_tab1"
+        style="@style/tab"
+        android:text="tab1"
+        />
+    <Button 
+        android:id="@+id/btn_tab2"
+        style="@style/tab"
+        android:text="tab2"
+        />
+
+</LinearLayout>
