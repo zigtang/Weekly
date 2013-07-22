@@ -1,6 +1,9 @@
 package net.zig.weekly.base;
 
+import net.zig.weekly.R;
+import net.zig.weekly.util.DateUtil;
 import net.zig.weekly.util.SharedPreferenceUtil;
+import net.zig.weekly.widgets.TitleView;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -13,12 +16,15 @@ public class BaseActivity extends Activity{
 	protected SharedPreferenceUtil preferenceUtil;
 	protected final String TAG = getClass().getSimpleName();
 	protected Context context;
+	protected TitleView titleView;
+	protected DateUtil dateUtil;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		context = getApplicationContext();
 		preferenceUtil = SharedPreferenceUtil.getInstance(context);
+		dateUtil = DateUtil.getInstance();
 //		Calendar.WEEK_OF_MONTH;
 //		Calendar.DAY_OF_WEEK;
 	}
@@ -30,11 +36,11 @@ public class BaseActivity extends Activity{
 	public void onClick(View v) {
 		
 	}
-	
-	
 
+	@Override
+	public void setContentView(int layoutResID) {
+		super.setContentView(layoutResID);
+		titleView = (TitleView)findViewById(R.id.layout_title);
+	}
 	
-	
-	
-
 }

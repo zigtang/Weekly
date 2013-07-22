@@ -13,48 +13,47 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class MainActivity extends BaseActivity implements OnItemClickListener{
+public class MainActivity extends BaseActivity implements OnItemClickListener {
 
-	//String[] week ;
+	// String[] week ;
 	private ListView lv;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		lv = (ListView)findViewById(R.id.lv_main);
+		lv = (ListView) findViewById(R.id.lv_main);
 		lv.setOnItemClickListener(this);
 		lv.setAdapter(new Adapter());
-		
+		titleView.setTitleText(dateUtil.getYearMonthWeek());
 	}
 
 	class Adapter extends BaseAdapter {
 		String[] week = getResources().getStringArray(R.array.week);
+
 		@Override
 		public int getCount() {
 			return week.length;
 		}
 
-		
 		@Override
 		public Object getItem(int position) {
-			// TODO Auto-generated method stub
 			return null;
 		}
 
 		@Override
 		public long getItemId(int position) {
-			// TODO Auto-generated method stub
 			return position;
 		}
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			if(convertView == null){
-				convertView = LayoutInflater.from(context).inflate(R.layout.item_memo, null);
-			}
-			((TextView)convertView.findViewById(R.id.tv_item_dayinweek)).setText(week[position]);
-			((TextView)convertView.findViewById(R.id.tv_item_diary)).setText(preferenceUtil.getDiary(""+position));
+			convertView = LayoutInflater.from(context).inflate(R.layout.item_memo, null,false);
+			((TextView) convertView.findViewById(R.id.tv_item_dayinweek)).setText(week[position]);
+			((TextView) convertView.findViewById(R.id.tv_item_diary)).setText(preferenceUtil.getDiary("" + position));
 			convertView.setEnabled(false);
+			if ((position+1) == dateUtil.getTodayIndex()) {
+				convertView.setBackgroundResource(R.drawable.bg_item_today);
+			}
 			return convertView;
 		}
 	}
@@ -65,17 +64,16 @@ public class MainActivity extends BaseActivity implements OnItemClickListener{
 		Intent intent = new Intent();
 		intent.setClass(context, DiaryActivity.class);
 		intent.putExtra(AppConts.KEY_ITEM_POSITON, position);
-		startActivityForResult(intent,AppConts.REQUEST_CODE_DIARY);
+		startActivityForResult(intent, AppConts.REQUEST_CODE_DIARY);
 	}
-	
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		if(requestCode == AppConts.REQUEST_CODE_DIARY && resultCode == RESULT_OK){
+		if (requestCode == AppConts.REQUEST_CODE_DIARY
+				&& resultCode == RESULT_OK) {
 			((BaseAdapter) lv.getAdapter()).notifyDataSetChanged();
 		}
 	}
-	
-	
 
 }

@@ -27,8 +27,12 @@
     <!--  Title -->
     <style name="btn_title">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:onClick">onClick</item>
         <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/selector_btn</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 </resources>

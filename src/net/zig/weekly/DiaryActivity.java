@@ -35,10 +35,10 @@ public class DiaryActivity extends BaseActivity {
 		
 		switch (v.getId()) {
 		case R.id.btn_title_left:
-			preferenceUtil.saveDiary(""+position, etDiary.getText().toString());
-			setResult(RESULT_OK);
 			break;
 		case R.id.btn_title_right:
+			preferenceUtil.saveDiary(""+position, etDiary.getText().toString());
+			setResult(RESULT_OK);
 			break;
 		}
 		

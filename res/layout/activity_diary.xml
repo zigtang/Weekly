@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:titleView="http://schemas.android.com/apk/res/net.zig.weekly" 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    <include layout="@layout/view_title" android:id="@+id/layout_title"/>
+<!--     <include layout="@layout/view_title" android:id="@+id/layout_title"/> -->
+    <net.zig.weekly.widgets.TitleView 
+        android:id="@+id/layout_title"
+        android:layout_width="match_parent"
+   	 	android:layout_height="wrap_content" 
+        titleView:text_leftBtn="撤销"
+        titleView:text_rightbtn="保存"
+        titleView:text="日记"
+        />
     <LinearLayout 
         android:id="@+id/layout_diary_bottom"
         android:layout_width="match_parent"

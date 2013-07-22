@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" 
-    android:padding="10dp"
-    android:background="#cce8cf"
+    android:layout_height="50dp" 
+    android:background="@drawable/abs__ab_solid_dark_holo"
     >
     <TextView 
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Title"
         android:textSize="20sp"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:layout_centerInParent="true"
         />
     
@@ -18,14 +18,12 @@
         android:id="@+id/btn_title_left"
         style="@style/btn_title"
         android:layout_alignParentLeft="true"
-        android:text="保存"
         />
     
      <Button 
         android:id="@+id/btn_title_right"
         style="@style/btn_title"
         android:layout_alignParentRight="true"
-        android:text="撤销"
         />
 
 </RelativeLayout>
