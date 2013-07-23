@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    	<attr name="gone_leftBtn"  format="boolean"/>
+        <attr name="gone_rightBtn"  format="boolean"/>
+        <attr name="text_leftBtn" fomat="string"/>
+        <attr name="text_rightbtn" fomat="string"/>
+        <attr name="text" fomat="string"/>
+        
+        
+    <declare-styleable name="titleView">
+        <attr name="gone_leftBtn"/>
+        <attr name="gone_rightBtn"/>
+        <attr name="text_leftBtn"/>
+        <attr name="text_rightbtn"/>
+        <attr name="text"/>
+    </declare-styleable>
+    
+</resources>

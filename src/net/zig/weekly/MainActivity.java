@@ -52,7 +52,7 @@ public class MainActivity extends BaseActivity implements OnItemClickListener {
 			((TextView) convertView.findViewById(R.id.tv_item_diary)).setText(preferenceUtil.getDiary("" + position));
 			convertView.setEnabled(false);
 			if ((position+1) == dateUtil.getTodayIndex()) {
-				convertView.setBackgroundResource(R.drawable.bg_item_today);
+				convertView.setBackgroundColor(getResources().getColor(R.color.blue_light));
 			}
 			return convertView;
 		}
